@@ -7,9 +7,9 @@ export const getCoin = async (req: Request, res: Response) => {
   const price = coinPriceCache[coinId];
 
   if (price !== undefined) {
-    res.json({ coinId, price });
+    return res.json({ coinId, price });
   } else {
-    res.status(404).json({ error: "Price not available" });
+    return res.status(404).json({ error: "Price not available" });
   }
 };
 
